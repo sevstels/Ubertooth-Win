@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="endian">
+      <UniqueIdentifier>{f8f092a1-a9ee-4941-a570-419c355d4f99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="getopt">
+      <UniqueIdentifier>{718d7912-df06-4741-9ee5-7b0f355c5b09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{e3f01da1-8c3f-48cc-9883-b065f9297718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-btbb">
+      <UniqueIdentifier>{64c51d80-61c5-45c6-9399-c8bcbff203a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-usb">
+      <UniqueIdentifier>{85fafc36-70be-43e8-a7e3-90791cbe54c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-ubertooth">
+      <UniqueIdentifier>{7f41f687-2dae-49b6-b6bc-82fcf0182398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="page size">
+      <UniqueIdentifier>{a39ad2f2-dfe2-4113-83d2-b636a8ae5ea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DM3 Tx">
+      <UniqueIdentifier>{84201d32-7b7e-4394-9d52-dd0ac9b59326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console-color">
+      <UniqueIdentifier>{c3f664d5-617d-49f0-ad7a-63f5f7dcf6a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-btbb\src">
+      <UniqueIdentifier>{f8b972d9-9590-4b72-ab2b-3ec991f274b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib-ubertooth\src">
+      <UniqueIdentifier>{46519ed1-8198-454d-9145-aecfefa6eb63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\console-color\console_color.cpp">
+      <Filter>console-color</Filter>
+    </ClCompile>
+    <ClCompile Include="src\getopt\getopt.c">
+      <Filter>getopt</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dm3\dm3-tx.c">
+      <Filter>DM3 Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dm3\mydump.c">
+      <Filter>DM3 Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\page-size\win_pagesize.c">
+      <Filter>page size</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-btbb\src\bluetooth_le_packet.c">
+      <Filter>lib-btbb\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-btbb\src\bluetooth_packet.c">
+      <Filter>lib-btbb\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-btbb\src\bluetooth_piconet.c">
+      <Filter>lib-btbb\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-btbb\src\pcap.c">
+      <Filter>lib-btbb\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-btbb\src\pcapng.c">
+      <Filter>lib-btbb\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-btbb\src\pcapng-bt.c">
+      <Filter>lib-btbb\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-ubertooth\ubertooth.c">
+      <Filter>lib-ubertooth\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-ubertooth\ubertooth_callback.c">
+      <Filter>lib-ubertooth\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-ubertooth\ubertooth_control.c">
+      <Filter>lib-ubertooth\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib-ubertooth\ubertooth_ringbuffer.c">
+      <Filter>lib-ubertooth\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\console-color\console_color.h">
+      <Filter>console-color</Filter>
+    </ClInclude>
+    <ClInclude Include="src\getopt\getopt.h">
+      <Filter>getopt</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dm3\dm3-tx.h">
+      <Filter>DM3 Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\page-size\win_pagesize.h">
+      <Filter>page size</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\bluetooth_le_packet.h">
+      <Filter>lib-btbb\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\bluetooth_packet.h">
+      <Filter>lib-btbb\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\bluetooth_piconet.h">
+      <Filter>lib-btbb\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\pcap-common.h">
+      <Filter>lib-btbb\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\pcapng.h">
+      <Filter>lib-btbb\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\pcapng-bt.h">
+      <Filter>lib-btbb\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\sw_check_tables.h">
+      <Filter>lib-btbb\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\uthash.h">
+      <Filter>lib-btbb\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-btbb\src\btbb.h">
+      <Filter>lib-btbb</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-ubertooth\ubertooth_callback.h">
+      <Filter>lib-ubertooth\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-ubertooth\ubertooth_control.h">
+      <Filter>lib-ubertooth\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-ubertooth\ubertooth_interface.h">
+      <Filter>lib-ubertooth\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-ubertooth\ubertooth_ringbuffer.h">
+      <Filter>lib-ubertooth\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-ubertooth\ubertooth.h">
+      <Filter>lib-ubertooth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\endian\portable_endian.h">
+      <Filter>endian</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib-usb\libusb.h">
+      <Filter>lib-usb</Filter>
+    </ClInclude>
+    <ClInclude Include="src\headers\includes.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\headers\btbb_packet.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
