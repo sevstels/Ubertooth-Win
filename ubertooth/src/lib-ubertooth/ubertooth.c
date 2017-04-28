@@ -111,17 +111,27 @@ void ubertooth_set_timeout(ubertooth_t* ut, int seconds) {
 	alarm(seconds);	*/
 }
 
+//------------------------------------------------------------------------------
+// +
+//------------------------------------------------------------------------------
 static struct libusb_device_handle* find_ubertooth_device(int ubertooth_device)
 {
 	struct libusb_context *ctx = NULL;
 	struct libusb_device **usb_list = NULL;
 	struct libusb_device_handle *devh = NULL;
 	struct libusb_device_descriptor desc;
-	int usb_devs, i, r, ret, ubertooths = 0;
+	int usb_dev_num, i, r, ret, ubertooths = 0;
 	int ubertooth_devs[] = {0,0,0,0,0,0,0,0};
+	
+    #ifdef _DEBUG 
+    ///libusb_set_debug(ctx, LIBUSB_LOG_LEVEL_DEBUG);
+	libusb_set_debug(ctx, LIBUSB_LOG_LEVEL_INFO);
+    #endif
 
-	usb_devs = libusb_get_device_list(ctx, &usb_list);
-	for(i = 0 ; i < usb_devs ; ++i) {
+	//Get usb dev list
+	usb_dev_num = libusb_get_device_list(ctx, &usb_list);
+	for(i = 0 ; i < usb_dev_num ; ++i) 
+	{
 		r = libusb_get_device_descriptor(usb_list[i], &desc);
 		if(r < 0)
 			fprintf(stderr, "couldn't get usb descriptor for dev #%d!\n", i);
@@ -133,13 +143,19 @@ static struct libusb_device_handle* find_ubertooth_device(int ubertooth_device)
 			ubertooths++;
 		}
 	}
-	if(ubertooths == 1) {
+	
+	if(ubertooths == 1) 
+	{
 		ret = libusb_open(usb_list[ubertooth_devs[0]], &devh);
 		if (ret)
 			show_libusb_error(ret);
 	}
 	else if (ubertooths == 0)
+	{
+	  	//release usb dev list
+		libusb_free_device_list(usb_list, usb_dev_num);
 		return NULL;
+	}
 	else {
 		if (ubertooth_device < 0) {
 			fprintf(stderr, "multiple Ubertooth devices found! Use '-U' to specify device number\n");
@@ -161,17 +177,22 @@ static struct libusb_device_handle* find_ubertooth_device(int ubertooth_device)
 				}
 			}
 			devh = NULL;
-		} else {
+		} 
+		else 
+		{
 			ret = libusb_open(usb_list[ubertooth_devs[ubertooth_device]], &devh);
-			if (ret) {
-					show_libusb_error(ret);
-					devh = NULL;
-				}
+			if (ret) 
+			{
+				show_libusb_error(ret);
+				devh = NULL;
+			}
 		}
 	}
+	
+	//release usb dev list
+	libusb_free_device_list(usb_list, usb_dev_num);	
 	return devh;
 }
-
 
 /*
  * based on http://libusb.sourceforge.net/api-1.0/group__asyncio.html#ga9fcb2aa23d342060ebda1d0cf7478856
@@ -602,36 +623,49 @@ ubertooth_t* ubertooth_init()
 
 int ubertooth_connect(ubertooth_t* ut, int ubertooth_device)
 {
+  //set locale for libusb
+  libusb_setlocale("en");
 
-#ifdef _DEBUG 
-	//libusb_set_debug(NULL, LIBUSB_LOG_LEVEL_INFO);
-#endif
+  //set locale for application
+  //setlocale(LC_ALL, "Russian");
 
-	libusb_setlocale("en");
-    //setlocale(LC_ALL, "Russian");
-
-	int r = libusb_init(NULL);
-	if (r < 0) {
+  int r = libusb_init(NULL);
+  if (r < 0) {
 		fprintf(stderr, "libusb_init failed (use ver:1.0?)\n");
 		return -1;
 	}
 
-	ut->devh = find_ubertooth_device(ubertooth_device);
-	if (ut->devh == NULL) {
+  ut->devh = find_ubertooth_device(ubertooth_device);
+  if (ut->devh == NULL) {
 		fprintf(stderr, "could not open Ubertooth device\n");
 		ubertooth_stop(ut);
 		return -1;
 	}
+ 
+  /* don`t work properly 
+  //check, usb driver is free? 
+  r = libusb_kernel_driver_active(ut->devh, 0); 
+  if (r < 0) 
+	{
+	   r = libusb_detach_kernel_driver(ut->devh, 0); 
+	   if (r < 0) 
+	   {
+		 fprintf(stderr, "libusb_kernel_driver_active error code: %d\n", r);
+		 fprintf(stderr, libusb_strerror((libusb_error)r));
+		 ubertooth_stop(ut);
+		 return -1; 
+	   }
+	} */ 
 
-	r = libusb_claim_interface(ut->devh, 0); //0
-	if (r < 0) {
+  r = libusb_claim_interface(ut->devh, 0);
+  if (r < 0) {
 		fprintf(stderr, "usb_claim_interface error code: %d\n", r);
 		fprintf(stderr, libusb_strerror((libusb_error)r));
 		ubertooth_stop(ut);
 		return -1;
 	}
 
-	return 1;
+  return 1;
 }
 
 ubertooth_t* ubertooth_start(int ubertooth_device)

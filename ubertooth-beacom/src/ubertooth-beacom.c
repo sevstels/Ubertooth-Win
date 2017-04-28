@@ -66,8 +66,6 @@ static void usage(void)
 	printf("\t-h help\n");
 	printf("\n");
 	printf("    Major modes:\n");
-	printf("\t-f follow connections\n");
-	printf("\t-p promiscuous: sniff active connections\n");
 	printf("\t-a[address] get/set access address (example: -a8e89bed6)\n");
 	printf("\t-s<address> faux slave mode, using MAC addr (example: -s22:44:66:88:aa:cc)\n");
 	printf("\t-t<address> set connection following target (example: -t22:44:66:88:aa:cc)\n");
@@ -80,15 +78,9 @@ static void usage(void)
 	printf("\t-U<0-7> set ubertooth device to use\n");
 	printf("\n");
 	printf("    Misc:\n");
-	printf("\t-r<filename> capture packets to PCAPNG file\n");
-	printf("\t-q<filename> capture packets to PCAP file (DLT_BLUETOOTH_LE_LL_WITH_PHDR)\n");
-	printf("\t-c<filename> capture packets to PCAP file (DLT_PPI)\n");
 	printf("\t-A<index> advertising channel index (default 37)\n");
 	printf("\t-v[01] verify CRC mode, get status or enable/disable\n");
 	printf("\t-x<n> allow n access address offenses (default 32)\n");
-
-	printf("\nIf an input file is not specified, an Ubertooth device is used for live capture.\n");
-	printf("In get/set mode no capture occurs.\n");
 }
 
 int main(int argc, char *argv[])
@@ -219,7 +211,6 @@ int main(int argc, char *argv[])
 		}
 	}
 
-
 	r = ubertooth_connect(ut, ubertooth_device);
 	if (r < 0) {
 		usage();
@@ -230,7 +221,7 @@ int main(int argc, char *argv[])
 	if (r < 0)
 		return 1;
 
-	/* Clean up on exit. */
+	// Clean up on exit
 	register_cleanup_handler(ut, 1);
 
 	if (do_follow && do_promisc) {
@@ -274,7 +265,7 @@ int main(int argc, char *argv[])
 			  printf("Can`t set RF channel: %d\n",channel);
 			  return 1;}
 			  else printf("Set access address: %08x\n", access_address);}		    
-			//---
+			  //---
 		} 
 		else 
 		{
