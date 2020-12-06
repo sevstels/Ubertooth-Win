@@ -74,7 +74,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\src;.\src\dm3;.\src\endian;.\src\headers;.\src\console-color;.\src\page-size;.\src\lib-usb;.\src\lib-btbb\src;.\src\lib-ubertooth</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src;.\src\dm3;.\src\endian;.\src\headers;.\src\console-color;.\src\page-size;.\src\lib-usb;.\src\lib-btbb\src;.\src\lib-ubertooth;.\src\win-errors</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;ENABLE_DEBUG_LOGGING;LIBUSB_DEBUG</PreprocessorDefinitions>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
@@ -119,7 +119,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>.\src;.\src\dm3;.\src\endian;.\src\headers;.\src\console-color;.\src\page-size;.\src\lib-usb;.\src\lib-btbb\src;.\src\lib-ubertooth</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src;.\src\dm3;.\src\endian;.\src\headers;.\src\console-color;.\src\page-size;.\src\lib-usb;.\src\lib-btbb\src;.\src\lib-ubertooth;.\src\win-errors</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
@@ -161,6 +161,8 @@
     <ClCompile Include="src\lib-ubertooth\ubertooth_control.c" />
     <ClCompile Include="src\lib-ubertooth\ubertooth_ringbuffer.c" />
     <ClCompile Include="src\page-size\win_pagesize.c" />
+    <ClCompile Include="src\win-errors\win-err.cpp" />
+    <ClCompile Include="src\win-pipe\win-pipe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\console-color\console_color.h" />
@@ -185,6 +187,8 @@
     <ClInclude Include="src\lib-ubertooth\ubertooth_ringbuffer.h" />
     <ClInclude Include="src\lib-usb\libusb.h" />
     <ClInclude Include="src\page-size\win_pagesize.h" />
+    <ClInclude Include="src\win-errors\win-err.h" />
+    <ClInclude Include="src\win-pipe\win-pipe.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

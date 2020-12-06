@@ -26,6 +26,7 @@
 #include <stdlib.h>
 #include "ubertooth.h"
 #include "dfu.h"
+#include "libusb.h"
 
 /*
  * DFU suffix / signature / CRC
@@ -374,7 +375,7 @@ int download(libusb_device_handle* devh, FILE* downfile) {
 static int get_outfile(char *infile, char **outfile) {
 	char *suffix = strrchr(infile, '.');
 	if (suffix != NULL && strcmp(suffix, ".bin") == 0) {
-		*outfile = strdup(infile);
+		*outfile = _strdup(infile);
 		if (*outfile == NULL)
 			return 0;
 		suffix = strrchr(*outfile, '.');

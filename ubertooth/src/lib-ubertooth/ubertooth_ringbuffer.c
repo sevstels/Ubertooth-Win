@@ -26,15 +26,15 @@
 
 static void unpack_symbols(const uint8_t* buf, char* unpacked)
 {
-	int i, j;
-
-
-	for (i = 0; i < SYM_LEN; i++) {
-		/* output one byte for each received symbol (0x00 or 0x01) */
-		for (j = 0; j < 8; j++) {
-			unpacked[i * 8 + j] = ((buf[i] << j) & 0x80) >> 7;
-		}
+  int i, j;
+  for (i = 0; i < SYM_LEN; i++)
+  {
+	/* output one byte for each received symbol (0x00 or 0x01) */
+	for (j = 0; j < 8; j++)
+	{
+	  unpacked[i * 8 + j] = ((buf[i] << j) & 0x80) >> 7;
 	}
+  }
 }
 
 ringbuffer_t* ringbuffer_init()

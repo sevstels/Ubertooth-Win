@@ -61,9 +61,11 @@ int max_ac_errors = 2;
 
 unsigned int packet_counter_max;
 
-void print_version() {
-	printf("libubertooth %s (%s), libbtbb %s (%s)\n", VERSION, RELEASE,
-	       btbb_get_version(), btbb_get_release());
+void print_version() 
+{
+  printf("libubertooth %s (%s), libbtbb %s (%s)\n", 
+	      VERSION, RELEASE,
+	      btbb_get_version(), btbb_get_release());
 }
 
 ubertooth_t* cleanup_devh = NULL;

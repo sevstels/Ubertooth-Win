@@ -71,7 +71,7 @@ S_IROTH 		чтение для остальных
 S_IWOTH 		запись для остальных
 S_IXOTX 		исполнение для остальных 
 */
-	handle->fd = open(filename, O_RDWR|O_CREAT|O_EXCL,  S_IREAD|S_IWRITE); //S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP );
+	handle->fd = _open(filename, O_RDWR|O_CREAT|O_EXCL,  S_IREAD|S_IWRITE); //S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP );
 	if (handle->fd == -1) {
 		switch( errno ) {
 		case EEXIST:
@@ -111,7 +111,7 @@ S_IXOTX 		исполнение для остальных
 		shb.section_length = (uint64_t) -1;
         
 		handle->section_header_size = sizeof(shb);
-		result = write( handle->fd, &shb, sizeof(shb));
+		result = _write( handle->fd, &shb, sizeof(shb));
 
    /* write initial section options */
 		while ((result != -1) &&
@@ -120,9 +120,9 @@ S_IXOTX 		исполнение для остальных
 		       section_options->option_length) {
 			size_t paddedsz = 4*((section_options->option_length+3)/4);
 			zeroes = paddedsz - section_options->option_length;
-			result = write( handle->fd, section_options, 4+section_options->option_length );
+			result = _write( handle->fd, section_options, 4+section_options->option_length );
 			while ((zeroes > 0) && (result != -1)) {
-				result = write( handle->fd, "\0", 1 );
+				result = _write( handle->fd, "\0", 1 );
 				zeroes--;
 			}
 			section_options = (const option_header *) &((uint8_t *)section_options)[4+paddedsz];
@@ -141,7 +141,7 @@ S_IXOTX 		исполнение для остальных
 			handle->section_header_size;
 		handle->section_header_size += zeroes;
 		while ((zeroes > 0) && (result != -1)) {
-			result = write( handle->fd, "\0", 1 );
+			result = _write( handle->fd, "\0", 1 );
 			zeroes--;
 		}
 
@@ -172,7 +172,7 @@ S_IXOTX 		исполнение для остальных
 		  idb.snaplen = snaplen;
 
 			handle->interface_description_size = sizeof( idb );
-			result = write( handle->fd, &idb, sizeof( idb ) );
+			result = _write( handle->fd, &idb, sizeof( idb ) );
 
 			/* write interface options */
 			while ((result != -1) &&
@@ -181,9 +181,9 @@ S_IXOTX 		исполнение для остальных
 			       interface_options->option_length) {
 				size_t paddedsz = 4*((interface_options->option_length+3)/4);
 				zeroes = paddedsz - interface_options->option_length;
-				result = write( handle->fd, interface_options, 4+interface_options->option_length );
+				result = _write( handle->fd, interface_options, 4+interface_options->option_length );
 				while ((zeroes > 0) && (result != -1)) {
-					result = write( handle->fd, "\0", 1 );
+					result = _write( handle->fd, "\0", 1 );
 					zeroes--;
 				}
 				interface_options = (const option_header *) &((uint8_t *)interface_options)[4+paddedsz];
@@ -204,7 +204,7 @@ S_IXOTX 		исполнение для остальных
 				handle->interface_description_size;
 			handle->interface_description_size += zeroes;
 			while ((zeroes > 0) && (result != -1)) {
-				result = write( handle->fd, "\0", 1 );
+				result = _write( handle->fd, "\0", 1 );
 				zeroes--;
 			}
 
@@ -322,7 +322,7 @@ PCAPNG_RESULT pcapng_append_packet( PCAPNG_HANDLE * handle,
 	PCAPNG_RESULT retval = PCAPNG_OK;  
 	if (handle && (handle->fd != -1)) {
 		size_t writesz = packet->block_total_length;
-		size_t result = write( handle->fd, packet, writesz );
+		size_t result = _write( handle->fd, packet, writesz );
 		if (result == -1) {
 			result = PCAPNG_FILE_WRITE_ERROR;
 		}
@@ -349,7 +349,9 @@ PCAPNG_RESULT pcapng_close( PCAPNG_HANDLE * handle )
 			       handle->section_header_size );
 	}
 	if (handle->fd != -1) {
-		(void) close( handle->fd );
+		(void) _close( handle->fd );
 	}   
 	return PCAPNG_OK;
 }
+//msvcrt.lib;libcmt.lib;ubertooth.lib
+//msvcrt.lib;libcmt.lib

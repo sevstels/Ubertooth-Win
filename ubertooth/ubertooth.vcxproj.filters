@@ -34,6 +34,12 @@
     <Filter Include="lib-ubertooth\src">
       <UniqueIdentifier>{46519ed1-8198-454d-9145-aecfefa6eb63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="win-err">
+      <UniqueIdentifier>{f0345854-7ce5-4ec7-b722-e1a007d6aae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win-pipe">
+      <UniqueIdentifier>{ce5c6a53-c477-4ba9-8b1b-1d62ca6940c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\console-color\console_color.cpp">
@@ -80,6 +86,12 @@
     </ClCompile>
     <ClCompile Include="src\lib-ubertooth\ubertooth_ringbuffer.c">
       <Filter>lib-ubertooth\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win-errors\win-err.cpp">
+      <Filter>win-err</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win-pipe\win-pipe.cpp">
+      <Filter>win-pipe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="src\headers\btbb_packet.h">
       <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\win-errors\win-err.h">
+      <Filter>win-err</Filter>
+    </ClInclude>
+    <ClInclude Include="src\win-pipe\win-pipe.h">
+      <Filter>win-pipe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

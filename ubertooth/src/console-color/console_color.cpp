@@ -4,8 +4,8 @@
 //Version:      1.00
 //Copyright:    (c) 2017, Akimov Vladimir  E-mail: decoder@rambler.ru	
 //==============================================================================
-
 #include "console_color.h"
+
 /* 
 FOREGROUND_BLUE	Text color contains blue.
 FOREGROUND_GREEN	Text color contains green.
@@ -21,7 +21,7 @@ COMMON_LVB_GRID_HORIZONTAL	Top horizontal.
 COMMON_LVB_GRID_LVERTICAL	Left vertical.
 COMMON_LVB_GRID_RVERTICAL	Right vertical.
 COMMON_LVB_REVERSE_VIDEO	Reverse foreground and background attributes.
-COMMON_LVB_UNDERSCORE	Underscore.
+COMMON_LVB_UNDERSCORE	    Underscore.
 */
 
 static unsigned short old_color = 0;

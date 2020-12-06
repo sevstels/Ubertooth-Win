@@ -1,10 +1,8 @@
 //==============================================================================
 //File name:    "lib-inclide.h"
-//Processor:    AVR (Atmel)
-//Toolkit:      EWAVR (IAR Systems)
 //Purpose:      Header File
 //Version:      1.00
-//Copyright:    (c) 2017, Akimov Vladimir  E-mail: decoder@rambler.ru		
+//Copyright:    (c) 2019, Akimov Vladimir  E-mail: decoder@rambler.ru		
 //==============================================================================
 #ifndef _LIB_INCLUDES_H_
 #define _LIB_INCLUDES_H_
@@ -15,7 +13,7 @@
 #ifdef NDEBUG
 #pragma comment(lib,"../ubertooth/src/lib-usb/x64/libusb-1.0.lib") //64bit Win
 #else
-#pragma comment(lib,"../ubertooth/src/lib-usb/x64dbg/libusb-1.0.lib")//64bit Win
+#pragma comment(lib,"../ubertooth/src/lib-usb/x64/libusb-1.0.lib")//64bit Win
 #endif
 
 #else
@@ -24,7 +22,7 @@
 #ifdef NDEBUG
 #pragma comment(lib,"../ubertooth/src/lib-usb/x86/libusb-1.0.lib") //32bit Win
 #else
-#pragma comment(lib,"../ubertooth/src/lib-usb/x86dbg/libusb-1.0.lib")//32bit Win
+#pragma comment(lib,"../ubertooth/src/lib-usb/x86/libusb-1.0.lib")//32bit Win
 //#pragma comment(lib,"libusb-1.0.lib")//32bit Win
 #endif 
 

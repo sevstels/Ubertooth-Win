@@ -50,7 +50,6 @@ static void usage()
 	printf("\t-b Bluetooth device (hci0)\n");
 }
 
-
 void extra_info(int dd, int dev_id, bdaddr_t* bdaddr)
 {
 	uint16_t handle, offset;

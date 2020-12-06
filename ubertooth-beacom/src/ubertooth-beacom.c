@@ -26,6 +26,10 @@
 #include <getopt.h>
 #include <string.h>
 #include <stdlib.h>
+//---
+#include <stdio.h>
+#include "win-err.h"
+#include "win-pipe.h"
 
 int convert_mac_address(char *s, uint8_t *o) {
 	int i;
@@ -83,6 +87,8 @@ static void usage(void)
 	printf("\t-x<n> allow n access address offenses (default 32)\n");
 }
 
+
+// -f -a8e89bed6
 int main(int argc, char *argv[])
 {
 	int opt;
@@ -129,30 +135,30 @@ int main(int argc, char *argv[])
 			ubertooth_device = atoi(optarg);
 			break;
 		case 'r':
-			if (!ut->h_pcapng_le) {	/* fix this:
+			if (!ut->h_pcapng_le) {
 				if (lell_pcapng_create_file(optarg, "Ubertooth", &ut->h_pcapng_le)) {
-					//err(1, "lell_pcapng_create_file: ");	
-				} */ 
+					err(1, "lell_pcapng_create_file: ");	
+				}
 			}
 			else {
 				printf("Ignoring extra capture file: %s\n", optarg);
 			}
 			break;
 		case 'q':
-			if (!ut->h_pcap_le) { /* fix this:
+			if (!ut->h_pcap_le) {
 				if (lell_pcap_create_file(optarg, &ut->h_pcap_le)) {
-					//err(1, "lell_pcap_create_file: ");  
-				}		*/
+					err(1, "lell_pcap_create_file: ");  
+				}	
 			}
 			else {
 				printf("Ignoring extra capture file: %s\n", optarg);
 			}
 			break;
 		case 'c':
-			if (!ut->h_pcap_le) { /* fix this:
+			if (!ut->h_pcap_le) {
 				if (lell_pcap_ppi_create_file(optarg, 0, &ut->h_pcap_le)) {
 					err(1, "lell_pcap_ppi_create_file: "); 
-				}	  */
+				}	
 			}
 			else {
 				printf("Ignoring extra capture file: %s\n", optarg);
@@ -166,11 +172,12 @@ int main(int argc, char *argv[])
 			break;
 		case 'A':
 			do_adv_index = atoi(optarg);
-			/*if (do_adv_index < 37 || do_adv_index > 39) {
-				printf("Error: advertising index must be 37, 38, or 39\n");
-				usage();
-				return 1;
-			}  */
+			if(do_adv_index < 37 || do_adv_index > 39) 
+			{
+			  printf("Error: advertising index must be 37, 38, or 39\n");
+			  usage();
+			  return 1;
+			}  
 			break;
 		case 's':
 			do_slave_mode = 1;
@@ -334,7 +341,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	if (!(do_follow || do_promisc || do_get_aa || do_set_aa ||
+	if(!(do_follow || do_promisc || do_get_aa || do_set_aa ||
 				do_crc >= 0 || do_slave_mode || do_target))
 		usage();
 

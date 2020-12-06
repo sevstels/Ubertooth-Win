@@ -18,14 +18,40 @@
  * the Free Software Foundation, Inc., 51 Franklin Street,
  * Boston, MA 02110-1301, USA.
  */
+#include <winsock2.h> 
 #include <windows.h>
 #include "ubertooth.h"
 #include "ubertooth_callback.h"
 #include <ctype.h>
-//#include <err.h>
+//#include <err.h> here used "win-err.h"
 #include <getopt.h>
 #include <string.h>
 #include <stdlib.h>
+
+//Connection to WireShark by use Win10Pcap: http://www.win10pcap.org/
+//Win10Pcap: WinPcap for Windows 10 (NDIS 6.x driver model)
+#include <stdio.h>
+#include "win-err.h"
+#include "win-pipe.h"
+
+#include <pcap.h>
+//Using Dll
+#ifdef _WIN64
+  #ifdef _DEBUG
+  #pragma comment(lib,"..\\WinPcap\\Lib\\x64\\wpcap.lib")
+  #else
+  #pragma comment(lib,"..\\WinPcap\\Lib\\x64\\wpcap.lib") //For 64bit WinOS
+  #endif
+#else
+  #ifdef _DEBUG
+  #pragma comment(lib,"..\\WinPcap\\Lib\\wpcap.lib")
+  #else
+  #pragma comment(lib,"..\\WinPcap\\Lib\\wpcap.lib") //For 32bit WinOS
+  #endif
+#endif
+
+//-------------------------------------------------------------------
+extern unsigned long packet_print_address_filter;
 
 int convert_mac_address(char *s, uint8_t *o) {
 	int i;
@@ -80,6 +106,8 @@ static void usage(void)
 	printf("\t-U<0-7> set ubertooth device to use\n");
 	printf("\n");
 	printf("    Misc:\n");
+    //NEW
+	printf("\t-w live capture packets to WireShark\n");
 	printf("\t-r<filename> capture packets to PCAPNG file\n");
 	printf("\t-q<filename> capture packets to PCAP file (DLT_BLUETOOTH_LE_LL_WITH_PHDR)\n");
 	printf("\t-c<filename> capture packets to PCAP file (DLT_PPI)\n");
@@ -116,9 +144,22 @@ int main(int argc, char *argv[])
 	do_crc = -1; // 0 and 1 mean set, 2 means get
 	do_adv_index = 37;
 	do_slave_mode = do_target = 0;
+	
+	//---pcap
+	pcap_t *handle;
+	int result;
+	pcap_if_t * alldevsp, *dev;
+	char *device = NULL;
+	char errbuf[PCAP_ERRBUF_SIZE];
 
-	while ((opt=getopt(argc,argv,"a::r:hfpU:v::A:s:t:x:c:q:jJiI")) != EOF) {
+	char *devname , devs[100][100];
+	int count = 1 , n;
+
+
+	while ((opt=getopt(argc,argv,"a::m::r:hfpU:v::A:s:t:x:c:q:jJiIwd")) != EOF) 
+	{
 		switch(opt) {
+		
 		case 'a':
 			if (optarg == NULL) {
 				do_get_aa = 1;
@@ -127,6 +168,15 @@ int main(int argc, char *argv[])
 				sscanf(optarg, "%08x", &access_address);
 			}
 			break;
+		
+		case 'm':
+			if (optarg == NULL) {
+				packet_print_address_filter = 0;
+			} else {
+				sscanf(optarg, "%08x", &packet_print_address_filter);
+			}
+			break;
+
 		case 'f':
 			do_follow = 1;
 			break;
@@ -137,35 +187,71 @@ int main(int argc, char *argv[])
 			ubertooth_device = atoi(optarg);
 			break;
 		case 'r':
-			if (!ut->h_pcapng_le) {	/* fix this:
-				if (lell_pcapng_create_file(optarg, "Ubertooth", &ut->h_pcapng_le)) {
-					//err(1, "lell_pcapng_create_file: ");	
-				} */ 
+			if (!ut->h_pcapng_le) 
+			{
+			  if(lell_pcapng_create_file(optarg, "Ubertooth", &ut->h_pcapng_le))
+			  {
+				err(1, "lell_pcapng_create_file: "); return 0;	
+			  } 
 			}
 			else {
 				printf("Ignoring extra capture file: %s\n", optarg);
 			}
 			break;
 		case 'q':
-			if (!ut->h_pcap_le) { /* fix this:
+			if (!ut->h_pcap_le) {
 				if (lell_pcap_create_file(optarg, &ut->h_pcap_le)) {
-					//err(1, "lell_pcap_create_file: ");  
-				}		*/
+					err(1, "lell_pcap_create_file: "); return 0; 
+				}
 			}
 			else {
 				printf("Ignoring extra capture file: %s\n", optarg);
 			}
 			break;
+		//------
 		case 'c':
-			if (!ut->h_pcap_le) { /* fix this:
-				if (lell_pcap_ppi_create_file(optarg, 0, &ut->h_pcap_le)) {
-					err(1, "lell_pcap_ppi_create_file: "); 
-				}	  */
+			if (!ut->h_pcap_le)
+			{
+			  if(lell_pcap_ppi_create_file(optarg, 0, &ut->h_pcap_le))
+			  {
+				err(1, "lell_pcap_ppi_create_file: ");
+				return 0;
+			  }
 			}
-			else {
+			else 
+			{
 				printf("Ignoring extra capture file: %s\n", optarg);
 			}
 			break;
+		
+	    //---- Wireshark live capture
+		case 'w':
+            test_pipe();   
+			break;
+
+	    //---- Show all existing Pcap devices
+		case 'd':
+			result = pcap_findalldevs(&alldevsp, errbuf);
+			if(result==0)
+			{
+	          //Print the available devices
+	          printf("\nAvailable Devices are :\n");
+			  
+	          pcap_if_t *pdevice;
+	          for(pdevice = alldevsp; pdevice != NULL ; pdevice = pdevice->next)
+	          {
+		         printf("%d. %s - %s\n" , count , pdevice->name , pdevice->description);
+		         if(pdevice->name != NULL)
+		          {
+			        strcpy(devs[count] , pdevice->name);
+		          }
+		         count++;
+	          }
+			}
+		    return 1;
+		break;
+
+	    //-----
 		case 'v':
 			if (optarg)
 				do_crc = atoi(optarg) ? 1 : 0;

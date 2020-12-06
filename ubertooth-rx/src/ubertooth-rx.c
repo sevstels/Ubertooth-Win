@@ -27,6 +27,8 @@
 #include <string.h>
 #include "dm3-tx.h"
 #include <locale.h>
+#include "win-err.h"
+//#include "win-pipe.h"
 
 static void usage()
 {
@@ -116,7 +118,7 @@ int main(int argc, char* argv[])
 		case 'r':
 			if (!ut->h_pcapng_bredr) {
 				if (btbb_pcapng_create_file( optarg, "Ubertooth", &ut->h_pcapng_bredr )) {
-					///err(1, "create_bredr_capture_file: ");
+					err(1, "create_bredr_capture_file: ");
 				}
 			}
 			else {
@@ -126,7 +128,7 @@ int main(int argc, char* argv[])
 		case 'q':
 			if (!ut->h_pcap_bredr) {
 				if (btbb_pcap_create_file(optarg, &ut->h_pcap_bredr)) {
-					///err(1, "btbb_pcap_create_file: ");
+					err(1, "btbb_pcap_create_file: ");
 				}
 			}
 			else {

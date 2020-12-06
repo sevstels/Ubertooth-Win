@@ -43,8 +43,9 @@
 #include "portable_endian.h"
 #endif
 
-//проверить та ли это переменнаяя тк совпадает с !!!
+//проверить та ли это переменная тк совпадает с !!!
 extern unsigned int packet_counter_max;
+unsigned long packet_print_address_filter = 0;
 
 static int8_t cc2400_rssi_to_dbm( const int8_t rssi )
 {
@@ -527,15 +528,21 @@ void cb_btle(ubertooth_t* ut, void* args)
 	if (rx_ts < prev_ts)
 		rx_ts += 3276800000;
 	u32 ts_diff = rx_ts - prev_ts;
+	
+	unsigned long btle_address = lell_get_access_address(pkt);
+	
+	//if(btle_address!=0x8e89bed6)// ||
+	  // packet_print_address_filter==0)
+	//{
 
 	printf("clk100: new=%d  last=%d delta=%d\n", rx->clk100ns, prev_ts, rx->clk100ns-prev_ts);
 
 	prev_ts = rx->clk100ns;
 	
 	printf("systime=%u freq=%d addr=%08x delta_t=%.03f ms rssi=%d\n",
-	       systime, rx->channel + 2402, lell_get_access_address(pkt),
+	       systime, rx->channel + 2402, btle_address,
 	       ts_diff / 10000.0, rx->rssi_min - 54);
-
+	
 	int len = (rx->data[5] & 0x3f) + 6 + 3;
 	if (len > 50) len = 50;
 
@@ -545,7 +552,13 @@ void cb_btle(ubertooth_t* ut, void* args)
 
 	lell_print(pkt);
 	printf("\n");
-
+	
+/*	}
+	else
+	{
+	  printf("\rpacket accepted: %d", rx->clk100ns);
+	}
+  */
 	lell_packet_unref(pkt);
 
 	fflush(stdout);
