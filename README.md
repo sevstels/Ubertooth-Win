@@ -1,4 +1,3 @@
 # Ubertooth-Win
 
-Documentation page: 
-http://electronics.quantumlah.org  > 'Ubertooth-One' IAR & MSVS port for Windows
+Documentation page: > ['Ubertooth-One' IAR & MSVS port for Windows](http://electronics.quantumlah.org/index.php?pg=ubertooth)
