@@ -2,16 +2,16 @@ Thumbs.db
 *.obj
 *.exe
 *.pdb
-*.user
 *.aps
 *.pch
 *.vspscc
+*.lastbuildstate
 *_i.c
 *_p.c
 *.ncb
-*.suo
 *.sln.docstates
 *.tlb
+*.idb
 *.tlh
 *.bak
 *.cache
@@ -19,7 +19,6 @@ Thumbs.db
 *.log
 [Bb]in
 [Dd]ebug*/
-*.lib
 *.sbr
 obj/
 [Rr]elease*/
