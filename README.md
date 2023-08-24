@@ -1,7 +1,6 @@
 # Ubertooth-Win
 
-Port of original code "Ubertooth-one" project for the Bluetooth communication protocol debugging on Windows OS.
+A professional > ['Ubertooth-One'](https://greatscottgadgets.com/ubertoothone/) tool for researching and debugging BT and BLE bluetooth protocols. 
+This package is made to work on Windows OS. Read the description of the package for Linux on the page: 
 
-The original project is here: https://github.com/greatscottgadgets/ubertooth
-
-Documentation page: > ['Ubertooth-One' IAR & MSVS port for Windows](http://electronics.quantumlah.org/index.php?pg=ubertooth)
+The Linux project is here: https://github.com/greatscottgadgets/ubertooth
