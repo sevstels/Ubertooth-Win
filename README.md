@@ -10,20 +10,15 @@ Release of the Windows version of the device management GUI utility.
 To connect the device, install the WinUSB driver with Zadig utility. 
 https://zadig.akeo.ie/
 
-A few functions I need are working now.
+<p align="center">A few functions I need are working now.<p/>
+<p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/e50a8506-a3fa-41db-8ea2-74f98c510b88"><p/>
+<p align="center">Spectrum analyzer:<p/>
 
-![ubt-1](https://github.com/sevstels/Ubertooth-Win/assets/13213368/e50a8506-a3fa-41db-8ea2-74f98c510b88)
+<p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/10f5888d-cb91-4ae8-8055-34f7c11a1ed8"><p/>
 
-Spectrum analyzer: 
+<p align="center">Read data stream and convenient channel switching<p/>
 
-![ubt-4](https://github.com/sevstels/Ubertooth-Win/assets/13213368/10f5888d-cb91-4ae8-8055-34f7c11a1ed8)
-
-
-Read data stream and convenient channel switching
-
-![ubt-3](https://github.com/sevstels/Ubertooth-Win/assets/13213368/86b4bd34-3af3-47d0-884b-5483a8d8ea1b)
-
-A little later I will add forward received packets to WireShark.
-
-You can download the release at this link: [Ubertooth-Win Release](https://gradient-sg.com/files/ubert/UW-Release.zip) 
+<p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/86b4bd34-3af3-47d0-884b-5483a8d8ea1b"><p/>
+  
+A little later I will add forward received packets to WireShark. You can download the release at this link: [Ubertooth-Win Release](https://gradient-sg.com/files/ubert/UW-Release.zip) 
 Because of Microsoft's idiocy with 2FA , makes do very difficult to log into GitHub if you have releases here.
