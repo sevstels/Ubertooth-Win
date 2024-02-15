@@ -16,7 +16,8 @@ A few functions I need are working now.
 
 Spectrum analyzer: 
 
-![ubt-4](https://github.com/sevstels/Ubertooth-Win/assets/13213368/c3e6f263-a329-41d1-809e-9cd8e644e4e2)
+![ubt-4](https://github.com/sevstels/Ubertooth-Win/assets/13213368/10f5888d-cb91-4ae8-8055-34f7c11a1ed8)
+
 
 Read data stream and convenient channel switching
 
