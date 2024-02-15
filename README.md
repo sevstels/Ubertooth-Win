@@ -6,7 +6,11 @@ This package is made to work on Windows OS. Read the description of the package 
 ![ubertooth-and-antenna](https://github.com/sevstels/Ubertooth-Win/assets/13213368/2c892a59-b8d8-4965-8203-b17a37e11778)
 
 
-Made a release of the Windows version of the device management utility. You can add your own functions to the code if you want. A few functions I need are working now.
+Release of the Windows version of the device management GUI utility. 
+To connect the device, install the WinUSB driver with Zadig utility. 
+https://zadig.akeo.ie/
+
+A few functions I need are working now.
 
 ![ubt-1](https://github.com/sevstels/Ubertooth-Win/assets/13213368/e50a8506-a3fa-41db-8ea2-74f98c510b88)
 
