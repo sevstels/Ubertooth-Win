@@ -21,4 +21,4 @@ https://zadig.akeo.ie/
 <p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/86b4bd34-3af3-47d0-884b-5483a8d8ea1b"><p/>
   
 A little later I will add forward received packets to WireShark. You can download the release at this link: [Ubertooth-Win Release](https://gradient-sg.com/files/ubert/UW-Release.zip) 
-Because of Microsoft's idiocy with 2FA , makes do very difficult to log into GitHub if you have releases here.
+Because of Microsoft's new ruls 2FA, makes do very difficult to log into GitHub if you have releases here.
