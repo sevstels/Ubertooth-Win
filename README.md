@@ -1,12 +1,12 @@
-# Ubertooth-Win
-
+# Ubertooth-Win  
+Release of the Windows version of the device management GUI utility.  
 A professional > [Ubertooth-One](https://greatscottgadgets.com/ubertoothone/) tool for researching and debugging BT and BLE bluetooth protocols. 
 This package is made to work on Windows OS. Read the description of the package for Linux on the page: https://github.com/greatscottgadgets/ubertooth
 
 ![ubertooth-and-antenna](https://github.com/sevstels/Ubertooth-Win/assets/13213368/2c892a59-b8d8-4965-8203-b17a37e11778)
 
 
-Release of the Windows version of the device management GUI utility.   
+<b>How To install</b>   
 To connect the device, install the WinUSB driver with Zadig utility.   
 https://zadig.akeo.ie/  
 
@@ -23,6 +23,7 @@ https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BF
 
 To support fast bgraphical output, install DirectX support.  
 [DirectX End-User Runtimes (June 2010)](https://www.microsoft.com/en-sg/download/details.aspx?id=8109)  
+
 
 
 <b>Application</b>
