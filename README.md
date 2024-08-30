@@ -11,6 +11,10 @@ https://zadig.akeo.ie/
 Open the utility and select the: <b>Options->List All Devices</b>.  
 Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB driver for it.  
 
+![driver](https://github.com/user-attachments/assets/59305e74-22e1-4c58-bb33-bd448a02dbf0)
+
+<br>
+<br>
 Add the necessary Microsoft dll`s to the operating systems.  
 
 vcredist_x64.exe - for 64-bit versions of Windows 11, Windows 10 and previous OS.  
