@@ -18,6 +18,7 @@ https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BF
 
 vcredist_x86.exe - for 32-bit systems.    
 https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe/  
+GitHub screws up links to files. Copy them as text and open them in a browser.
 
 To fast graphics output, install DirectX support.  
 [DirectX End-User Runtimes (June 2010)](https://www.microsoft.com/en-sg/download/details.aspx?id=8109)  
