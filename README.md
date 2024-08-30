@@ -14,8 +14,10 @@ Open the utility and select the: <b>Options->List All Devices</b>.
 Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB driver for it.  
 
 Add the necessary Microsoft dll`s to the operating systems.  
+
 vcredist_x64.exe - for 64-bit versions of Windows 11, Windows 10 and previous OS.  
 https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x64.exe/  
+
 vcredist_x86.exe - for 32-bit systems.    
 https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe/  
 
