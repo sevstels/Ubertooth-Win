@@ -14,10 +14,11 @@ Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB 
 
 <br>
 <br>
-Add the necessary Microsoft dll`s to the operating system.     
-Microsoft Visual C++ 2010 Redistributable Package:    
-https://gist.github.com/ChuckMichael/7366c38f27e524add3c54f710678c98b/ 
-
+Add the necessary Microsoft dll`s to the operating system.<br>
+Microsoft Visual C++ 2010 Redistributable Package:<br>    
+https://gist.github.com/ChuckMichael/7366c38f27e524add3c54f710678c98b/<br> 
+<br>
+<br>
 vcredist_x64.exe - for 64-bit versions of Windows 11, Windows 10 and previous OS.  
 vcredist_x86.exe - for 32-bit systems.
 
