@@ -27,7 +27,7 @@ https://www.microsoft.com/en-sg/download/details.aspx?id=8109
 <br>
 <br>
 <b>Application</b><br>  
-Release of the Windows version of the device management GUI utility. You can quickly check and see how the device works.  
+Release of the Windows version of the device management GUI utility. You can quickly check and see how the device works.<br>  
 
 <p align="center">A few functions I need are working now.<p/>
 <p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/e50a8506-a3fa-41db-8ea2-74f98c510b88"><p/>
