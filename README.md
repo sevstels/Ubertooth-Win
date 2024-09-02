@@ -18,10 +18,9 @@ Add the necessary Microsoft dll`s to the operating system.<br>
 Microsoft Visual C++ 2010 Redistributable Package:<br>    
 https://gist.github.com/ChuckMichael/7366c38f27e524add3c54f710678c98b/<br> 
 <br>
+vcredist_x64.exe - for 64-bit versions of Windows 11, Windows 10 and previous OS.<br>  
+vcredist_x86.exe - for 32-bit systems.<br>
 <br>
-vcredist_x64.exe - for 64-bit versions of Windows 11, Windows 10 and previous OS.  
-vcredist_x86.exe - for 32-bit systems.
-
 To fast graphics output, install DirectX support.  
 [DirectX End-User Runtimes (June 2010)](https://www.microsoft.com/en-sg/download/details.aspx?id=8109)  
 <br>
