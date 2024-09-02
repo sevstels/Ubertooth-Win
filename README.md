@@ -25,7 +25,7 @@ To fast graphics output, install DirectX support.
 [DirectX End-User Runtimes (June 2010)](https://www.microsoft.com/en-sg/download/details.aspx?id=8109)  
 <br>
 <br>
-<b>Application</b>
+<b>Application</b>  
 Release of the Windows version of the device management GUI utility. You can quickly check and see how the device works.  
 
 <p align="center">A few functions I need are working now.<p/>
