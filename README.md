@@ -1,5 +1,5 @@
 # Ubertooth-Win    
-A professional > [Ubertooth-One](https://greatscottgadgets.com/ubertoothone/) tool for researching and debugging BT and BLE bluetooth protocols. 
+A professional > [Ubertooth-One](https://greatscottgadgets.com/ubertoothone) tool for researching and debugging BT and BLE bluetooth protocols. 
 This package is made to work on Windows OS. Read the description of the package for Linux on the page: https://github.com/greatscottgadgets/ubertooth  
 ![ubertooth-and-antenna](https://github.com/sevstels/Ubertooth-Win/assets/13213368/2c892a59-b8d8-4965-8203-b17a37e11778)
 <br>
@@ -21,8 +21,9 @@ https://gist.github.com/ChuckMichael/7366c38f27e524add3c54f710678c98b/<br>
 vcredist_x64.exe - for 64-bit versions of Windows 11, Windows 10 and previous OS.<br>  
 vcredist_x86.exe - for 32-bit systems.<br>
 <br>
-To fast graphics output, install DirectX support.  
-[DirectX End-User Runtimes (June 2010)](https://www.microsoft.com/en-sg/download/details.aspx?id=8109)  
+To fast graphics output, install DirectX support.<br>  
+DirectX End-User Runtimes (June 2010)<br>
+https://www.microsoft.com/en-sg/download/details.aspx?id=8109
 <br>
 <br>
 <b>Application</b>  
