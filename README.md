@@ -1,5 +1,4 @@
-# Ubertooth-Win  
-Release of the Windows version of the device management GUI utility.  
+# Ubertooth-Win    
 A professional > [Ubertooth-One](https://greatscottgadgets.com/ubertoothone/) tool for researching and debugging BT and BLE bluetooth protocols. 
 This package is made to work on Windows OS. Read the description of the package for Linux on the page: https://github.com/greatscottgadgets/ubertooth  
 ![ubertooth-and-antenna](https://github.com/sevstels/Ubertooth-Win/assets/13213368/2c892a59-b8d8-4965-8203-b17a37e11778)
@@ -16,19 +15,17 @@ Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB 
 <br>
 <br>
 Add the necessary Microsoft dll`s to the operating system.  
-
+[Microsoft Visual C++ 2010 Redistributable Package](https://gist.github.com/ChuckMichael/7366c38f27e524add3c54f710678c98b)
 vcredist_x64.exe - for 64-bit versions of Windows 11, Windows 10 and previous OS.  
-https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x64.exe/  
-
-vcredist_x86.exe - for 32-bit systems.    
-https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe/  
-GitHub screws up links to files. Copy them as text and open them in a browser.
+vcredist_x86.exe - for 32-bit systems.
 
 To fast graphics output, install DirectX support.  
 [DirectX End-User Runtimes (June 2010)](https://www.microsoft.com/en-sg/download/details.aspx?id=8109)  
 <br>
 <br>
 <b>Application</b>
+Release of the Windows version of the device management GUI utility. You can quickly check and see how the device works.  
+
 <p align="center">A few functions I need are working now.<p/>
 <p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/e50a8506-a3fa-41db-8ea2-74f98c510b88"><p/>
 <p align="center">Spectrum analyzer:<p/>
