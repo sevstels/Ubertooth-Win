@@ -13,11 +13,10 @@ Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB 
 ![driver](https://github.com/user-attachments/assets/59305e74-22e1-4c58-bb33-bd448a02dbf0)
 
 <br>
+<br>
+<b>Application</b><br> 
 This version is compiled for x64 Windows. 
-To fast graphics output, should have DirectX support.<br>  
-<br>
-<br>
-<b>Application</b><br>  
+To fast graphics output, should have DirectX support.<br> 
 Release of the Windows version of the device management GUI utility. You can quickly check and see how the device works.<br><br>  
 
 <p align="center">A few functions I need are working now.<p/>
