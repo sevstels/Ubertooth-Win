@@ -5,7 +5,7 @@ This package is made to work on Windows OS. Read the description of the package 
 <br>
 <b>How To install</b> 
 To connect the device, install the WinUSB driver with Zadig utility.   
-https://zadig.akeo.ie/<br> 
+https://zadig.akeo.ie/<br><br> 
 Open the utility and select the: <b>Options->List All Devices</b>.<br>
 Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB driver for it.<br> 
 <br>
