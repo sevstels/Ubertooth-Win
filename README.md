@@ -17,7 +17,7 @@ Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB 
 <b>Application</b><br> 
 This version is compiled for x64 Windows. 
 To fast graphics output, should have DirectX support.<br> 
-Release of the Windows version of the device management GUI utility. You can quickly check and see how the device works.<br><br>  
+With this graphical utility for Windows, you can quickly check and see how your Ubertooth device is working.<br><br>  
 
 <p align="center">A few functions I need are working now.<p/>
 <p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/e50a8506-a3fa-41db-8ea2-74f98c510b88"><p/>
