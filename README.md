@@ -4,14 +4,13 @@ This package is made to work on Windows OS. Read the description of the package 
 ![ubertooth-and-antenna](https://github.com/sevstels/Ubertooth-Win/assets/13213368/2c892a59-b8d8-4965-8203-b17a37e11778)
 <br>
 <b>How To install</b> 
-<p align="center">To connect the device, install the WinUSB driver with Zadig utility.   
-https://zadig.akeo.ie/  
+To connect the device, install the WinUSB driver with Zadig utility.   
+https://zadig.akeo.ie/
 
-Open the utility and select the: <b>Options->List All Devices</b>.  
-Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB driver for it.  
-
-![driver](https://github.com/user-attachments/assets/59305e74-22e1-4c58-bb33-bd448a02dbf0)<p/>
-
+<p align="center">Open the utility and select the: <b>Options->List All Devices</b>. 
+  Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB driver for it. 
+  ![driver](https://github.com/user-attachments/assets/59305e74-22e1-4c58-bb33-bd448a02dbf0)<p/>
+    
 <br>
 <br>
 <b>Application</b><br> 
