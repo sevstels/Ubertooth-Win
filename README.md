@@ -3,7 +3,7 @@ A professional > [Ubertooth-One](https://greatscottgadgets.com/ubertoothone) too
 This package is made to work on Windows OS. Read the description of the package for Linux on the page: https://github.com/greatscottgadgets/ubertooth  
 ![ubertooth-and-antenna](https://github.com/sevstels/Ubertooth-Win/assets/13213368/2c892a59-b8d8-4965-8203-b17a37e11778)
 <br>
-<b>How To install</b> 
+<b>How To install</b><br> 
 To connect the device, install the WinUSB driver with Zadig utility.   
 https://zadig.akeo.ie/<br><br> 
 Open the utility and select the: <b>Options->List All Devices</b>.<br>
