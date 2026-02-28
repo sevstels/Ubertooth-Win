@@ -1,19 +1,19 @@
 # Ubertooth-Win    
 A professional > [Ubertooth-One](https://greatscottgadgets.com/ubertoothone) tool for researching and debugging BT and BLE bluetooth protocols. 
-This package is made to work on Windows OS. Read the description of the package for Linux on the page: https://github.com/greatscottgadgets/ubertooth  
+This package is rebuilt to work on Windows OS. Read the description of the package for Linux on the page: https://github.com/greatscottgadgets/ubertooth  
 ![ubertooth-and-antenna](https://github.com/sevstels/Ubertooth-Win/assets/13213368/2c892a59-b8d8-4965-8203-b17a37e11778)
 <br>
 <b>How To install</b><br> 
-To connect the device, install the WinUSB driver with Zadig utility.   
+To connect the device, install the WinUSB driver with Zadig driver tool.   
 https://zadig.akeo.ie/<br><br> 
 Open the utility and select the: <b>Options->List All Devices</b>.<br>
-Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB driver for it.<br> 
+Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB driver for device.<br> 
 <br>
 <p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/59305e74-22e1-4c58-bb33-bd448a02dbf0"><p/>
 <br>
 <b>Application</b><br> 
-This version is compiled for x64 Windows. 
-To fast graphics output, should have DirectX support.<br> 
+All applications is compiled for x64 Windows with win libusb. 
+To fast graphics display show, should have installed DirectX.<br> 
 With this graphical utility for Windows, you can quickly check and see how your Ubertooth device is working.<br><br>  
 
 <p align="center">A few functions I need are working now.<p/>
