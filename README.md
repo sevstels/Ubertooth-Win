@@ -12,9 +12,9 @@ Find the <b>bluetooth_rxtx</b> device in the list and install the latest WinUSB 
 <p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/59305e74-22e1-4c58-bb33-bd448a02dbf0"><p/>
 <br>
 <b>Application</b><br> 
-All applications is compiled for x64 Windows with win libusb. 
-To fast graphics display show, should have installed DirectX.<br> 
-With this graphical utility for Windows, you can quickly check and see how your Ubertooth device is working.<br><br>  
+Applications is compiled for x64 Windows.  
+To fast graphics panels show, should have installed DirectX.<br> 
+With this utility for Windows, you can quickly check and see how your Ubertooth device is working.<br><br>  
 
 <p align="center">A few functions I need are working now.<p/>
 <p align="center"><img src="https://github.com/sevstels/Ubertooth-Win/assets/13213368/e50a8506-a3fa-41db-8ea2-74f98c510b88"><p/>
